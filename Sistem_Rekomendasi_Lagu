@@ -32,3 +32,30 @@ class ScoreLinkedList:
             count += 1
             current = current.next
         return total / count if count > 0 else 0
+
+class SongGraph:
+    def __init__(self):
+        self.genre_map = {}
+
+    def add_song_to_genre(self, song_id, genre_list):
+        for genre in genre_list:
+            if genre not in self.genre_map:
+                self.genre_map[genre] = []
+            if song_id not in self.genre_map[genre]:
+                self.genre_map[genre].append(song_id)
+
+    def get_songs_by_genre(self, genre):
+        return self.genre_map.get(genre, [])
+
+    def remove_song_from_genres(self, song_id, genre_list):
+        for genre in genre_list:
+            if genre in self.genre_map and song_id in self.genre_map[genre]:
+                self.genre_map[genre].remove(song_id)
+
+class Song:
+    def __init__(self, id, title, artist, genres):
+        self.id = id
+        self.title = title
+        self.artist = artist
+        self.genres = genres
+        self.scores = ScoreLinkedList()
