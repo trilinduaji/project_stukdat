@@ -59,3 +59,31 @@ class Song:
         self.artist = artist
         self.genres = genres
         self.scores = ScoreLinkedList()
+
+
+
+# ajii
+Class MusicApp:
+    def _init_(self, master, system):
+        self.master = master
+        self.system = system
+        self.selected_song_id = None
+
+        master.title ("Sistem Rekomendasi Lagu")
+        master.geometry("900x650")
+
+        sel.notebook = ttk.Notebook(master)
+        self.notebook.pack(pady =10, padx =10, fill ="both", expand = True)
+        self.notebook.bind("<<NotebookTabChanged>>", self._on_tab_change)
+
+        self.frame_data = ttk.Frame(self.notebook)
+        self.notebook.add(self.frame_data, text=" Kelola Lagu ")
+        self._setup_data_frame(self.frame_data)
+
+        self.frame_rec = ttk.Frame(self.notebook)
+        self.notebook.add(self.frame_rec, text=" Dapatkan Rekomendasi ")
+        self._setup_recommendation_frame(self.frame_rec)
+
+        self._initial_data()
+        self.refresh_list()
+        self._update_genre_combobox()
