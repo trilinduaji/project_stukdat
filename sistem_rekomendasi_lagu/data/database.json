@@ -1,1 +1,69 @@
-
+{
+    "next_id": 1006,
+    "lagu": [
+        {
+            "id": 1001,
+            "judul": "Glimpse of Us",
+            "penyanyi": "Joji",
+            "genre": [
+                "R&b",
+                "Ballad"
+            ],
+            "skor": [
+                5,
+                5
+            ]
+        },
+        {
+            "id": 1002,
+            "judul": "Lathi",
+            "penyanyi": "Weird Genius",
+            "genre": [
+                "Electronic",
+                "Pop"
+            ],
+            "skor": [
+                5,
+                4,
+                4
+            ]
+        },
+        {
+            "id": 1003,
+            "judul": "Hati-Hati di Jalan",
+            "penyanyi": "Tulus",
+            "genre": [
+                "Pop",
+                "Ballad"
+            ],
+            "skor": [
+                3,
+                5
+            ]
+        },
+        {
+            "id": 1004,
+            "judul": "Monokrom",
+            "penyanyi": "Tulus",
+            "genre": [
+                "Pop"
+            ],
+            "skor": [
+                5
+            ]
+        },
+        {
+            "id": 1005,
+            "judul": "Lesung Pipi",
+            "penyanyi": "Raim Laode",
+            "genre": [
+                "Pop",
+                "Romantis"
+            ],
+            "skor": [
+                5,
+                4
+            ]
+        }
+    ]
+}
