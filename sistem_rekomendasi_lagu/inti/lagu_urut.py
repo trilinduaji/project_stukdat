@@ -1,4 +1,3 @@
-
 class NodeLagu:
     def __init__(self, lagu):
         self.lagu = lagu
