@@ -1,14 +1,19 @@
-def get_song_details(self, song_id):
-    song = self.songs.get(song_id)
-    if song:
-        avg_score = song.scores.calculate_average()
-        return (f"ID: {song.id}\nJudul Lagu: {song.title}\nArtis: {song.artist}\n"
-                f"Genre: {', '.join(song.genres)}\nAvg Popularity Score: {avg_score:.1f}")
-    return "Lagu tidak ditemukan."
+from collections import deque
 
-def recommend_by_genre(self, genre):
-    song_ids = self.graph.get_songs_by_genre(genre)
-    recommendations = [self.songs[sid] for sid in song_ids if sid in self.songs]
-    recommendations.sort(key=lambda s: s.scores.calculate_average(), reverse=True)
-    return [f"{s.title} oleh {s.artist} (Score: {s.scores.calculate_average():.1f})" 
-            for s in recommendations]
+class AntriPlaylist:
+    def __init__(self):
+        self.q = deque()
+
+    def tambah(self, song_id):
+        self.q.append(song_id)
+
+    def ambil(self):
+        if self.q:
+            return self.q.popleft()
+        return None
+
+    def lihat(self):
+        return list(self.q)
+
+    def kosong(self):
+        return len(self.q) == 0
