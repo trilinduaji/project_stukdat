@@ -1,4 +1,3 @@
-# inti/tumpukan_lagu.py
 class TumpukanLagu:
     def __init__(self):
         self.stack = []
