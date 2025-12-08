@@ -3,6 +3,7 @@ class NodeSkor:
         self.skor = skor
         self.berikut = None
 
+
 class DaftarSkor:
     def __init__(self):
         self.kepala = None
@@ -16,6 +17,7 @@ class DaftarSkor:
         while cur.berikut:
             cur = cur.berikut
         cur.berikut = node
+
     def hitung_rata(self):
         cur = self.kepala
         total = 0
@@ -26,19 +28,18 @@ class DaftarSkor:
             cur = cur.berikut
         return (total / n) if n else 0.0
 
-        def sebagai_list(self):
-            out = []
-            cur = self.kepala
-            while cur:
-                out.append(cur.skor)
-                cur = cur.berikut
-            return out
-    
-        def isi_dari_list(self, lst):
-            self.kepala = None
-            for s in lst:
-                try:
-                    self.tambah(int(s))
-                except:
-                    pass
-    
+    def sebagai_list(self):
+        out = []
+        cur = self.kepala
+        while cur:
+            out.append(cur.skor)
+            cur = cur.berikut
+        return out
+
+    def isi_dari_list(self, lst):
+        self.kepala = None
+        for s in lst:
+            try:
+                self.tambah(int(s))
+            except:
+                pass
